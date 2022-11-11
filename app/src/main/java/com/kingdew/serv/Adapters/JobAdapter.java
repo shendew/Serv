@@ -1,18 +1,23 @@
 package com.kingdew.serv.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kingdew.serv.Job;
+import com.kingdew.serv.JobViewActivity;
 import com.kingdew.serv.R;
 
 import java.util.ArrayList;
+
+import io.paperdb.Paper;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
 
@@ -32,8 +37,18 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Paper.init(context);
         holder.ttitle.setText(jobs.get(position).getJobName());
         holder.tprice.setText(jobs.get(position).getJobPrice());
+
+        holder.itemView.setOnClickListener(view -> {
+            //Toast.makeText(context, ""+jobs.get(position).getJobID(), Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(context, JobViewActivity.class);
+            intent.putExtra("jobID",jobs.get(position).getJobID());
+            Paper.book().write("jobID",String.valueOf(jobs.get(position).getJobID()));
+            context.startActivity(intent);
+
+        });
 
     }
 

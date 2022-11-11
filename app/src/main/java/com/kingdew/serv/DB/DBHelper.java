@@ -309,4 +309,51 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public Job getaJob(int id){
+        SQLiteDatabase DB =this.getReadableDatabase();
+        Cursor cursor=DB.rawQuery("Select * from jobs where jobID="+id,null);
+        Job jobs = null;
+
+        if (cursor.getCount()>0){
+                cursor.moveToFirst();
+                jobs=new Job(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getString(9)
+                );
+
+        }
+        return jobs;
+    }
+
+    public boolean updateJob(int jobID,String jobName,Integer jobPrice,String jobStatus,String jobOwner,String jobCompleter,String jobPhotos,String jobDesc,String jobAddress,String jobTele){
+        SQLiteDatabase DB=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("jobName",jobName);
+        contentValues.put("jobPrice",jobPrice);
+        contentValues.put("jobStatus",jobStatus);
+        contentValues.put("jobOwner",jobOwner);
+        contentValues.put("jobCompleter",jobCompleter);
+        contentValues.put("jobPhotos",jobPhotos);
+        contentValues.put("jobName",jobName);
+        contentValues.put("jobDesc",jobDesc);
+        contentValues.put("jobAddress",jobAddress);
+        contentValues.put("jobTele",jobTele);
+
+        long res=DB.update("jobs",contentValues,"jobID="+8,new String[]{});
+        if (res == -1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
 }
