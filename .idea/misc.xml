@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/drawable/login_button.xml" value="0.175" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/drawable/login_input.xml" value="0.175" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_add_job.xml" value="0.2" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_all_jobs.xml" value="0.152" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_chome_fragment.xml" value="0.25625" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_cleaner_home.xml" value="0.2703125" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_home.xml" value="0.22780797101449277" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_job_view.xml" value="0.17980072463768115" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_login.xml" value="0.22282608695652173" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_all_jobs.xml" value="0.2259963768115942" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_chome.xml" value="0.2734375" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_cmy_jobs.xml" value="0.2703125" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_cprofile.xml" value="0.2703125" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_home.xml" value="0.2259963768115942" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_my_jobs.xml" value="0.12447916666666667" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/fragment_profile.xml" value="0.2734375" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/job_item.xml" value="0.22780797101449277" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/layout/type_item.xml" value="0.2210144927536232" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/menu/chome_menu.xml" value="0.4" />
+        <entry key="..\:/Android Projects/Serv/app/src/main/res/menu/home_menu.xml" value="0.2734375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
