@@ -333,25 +333,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return jobs;
     }
 
-    public boolean updateJob(int jobID,String jobName,Integer jobPrice,String jobStatus,String jobOwner,String jobCompleter,String jobPhotos,String jobDesc,String jobAddress,String jobTele){
-        SQLiteDatabase DB=this.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
-        contentValues.put("jobName",jobName);
-        contentValues.put("jobPrice",jobPrice);
-        contentValues.put("jobStatus",jobStatus);
-        contentValues.put("jobOwner",jobOwner);
-        contentValues.put("jobCompleter",jobCompleter);
-        contentValues.put("jobPhotos",jobPhotos);
-        contentValues.put("jobName",jobName);
-        contentValues.put("jobDesc",jobDesc);
-        contentValues.put("jobAddress",jobAddress);
-        contentValues.put("jobTele",jobTele);
-
-        long res=DB.update("jobs",contentValues,"jobID="+8,new String[]{});
-        if (res == -1){
-            return false;
-        }else{
+    public boolean updateJob(String jobID, String jobCompleter){
+        try {
+            SQLiteDatabase DB=this.getWritableDatabase();
+            ContentValues values=new ContentValues();
+            values.put("jobStatus","pending");
+            values.put("jobCompleter",jobCompleter);
+            DB.update("jobs",values,"jobID=?",new String[]{String.valueOf(jobID)});
             return true;
+        }catch (Exception e){
+            return false;
         }
     }
 

@@ -1,6 +1,7 @@
 package com.kingdew.serv;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ public class JobViewActivity extends AppCompatActivity {
 
 
 
-        String id=getIntent().getExtras().getString("jobID");
+        //String id=getIntent().getExtras().getString("jobID");
         String jobID=Paper.book().read("jobID");
 
         //Toast.makeText(this, ""+jobID, Toast.LENGTH_SHORT).show();
@@ -35,6 +36,16 @@ public class JobViewActivity extends AppCompatActivity {
         TextView jbcname= findViewById(R.id.jbcname);
         TextView jbctele= findViewById(R.id.jbctele);
         TextView jbdesc=findViewById(R.id.jbdesc);
+
+        AppCompatButton aceptJ=findViewById(R.id.acpt_j);
+        aceptJ.setOnClickListener(view -> {
+            Toast.makeText(this, ""+job.getJobID(), Toast.LENGTH_SHORT).show();
+            if (helper.updateJob(jobID, Paper.book().read("email"))){
+                Toast.makeText(this, "Accepted", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         jbname.setText(job.getJobName());
         jbctele.setText(job.getJobTele());
