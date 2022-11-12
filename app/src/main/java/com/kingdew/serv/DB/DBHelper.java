@@ -346,5 +346,18 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateFJob(String jobID, String jobCompleter){
+        try {
+            SQLiteDatabase DB=this.getWritableDatabase();
+            ContentValues values=new ContentValues();
+            values.put("jobStatus","finished");
+            //values.put("jobCompleter",jobCompleter);
+            DB.update("jobs",values,"jobID=?",new String[]{String.valueOf(jobID)});
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 
 }

@@ -40,10 +40,20 @@ public class JobViewActivity extends AppCompatActivity {
         TextView jbdesc=findViewById(R.id.jbdesc);
 
         AppCompatButton aceptJ=findViewById(R.id.acpt_j);
+        AppCompatButton mac_j=findViewById(R.id.mac_j);
+
         aceptJ.setOnClickListener(view -> {
-            Toast.makeText(this, ""+job.getJobID(), Toast.LENGTH_SHORT).show();
+
             if (helper.updateJob(jobID, Paper.book().read("email"))){
                 Toast.makeText(this, "Accepted", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mac_j.setOnClickListener(view -> {
+            if (helper.updateFJob(jobID, Paper.book().read("email"))){
+                Toast.makeText(this, "Mark As Finished", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
             }
@@ -52,6 +62,13 @@ public class JobViewActivity extends AppCompatActivity {
         if (!Paper.book().read("type").equals("Cleaner")){
             aceptJ.setVisibility(View.GONE);
         }
+
+        if (!job.jobCompleter.equals(Paper.book().read("email"))){
+            mac_j.setVisibility(View.GONE);
+        }
+
+
+
         jbname.setText(job.getJobName());
         jbctele.setText(job.getJobTele());
         jbdesc.setText(job.getJobDesc());

@@ -39,8 +39,8 @@ public class CProfileFragment extends Fragment {
         ArrayList<Job> acceptedJObs=helper.getAceptedJobs(Paper.book().read("email"));
         ArrayList<Job> finishedJObs=helper.getFinishedJobs(Paper.book().read("email"));
         avail.setText(" "+acceptedJObs.size());
-        finished.setText(" "+acceptedJObs.size());
-        ajobs.setText(" "+(acceptedJObs.size()+acceptedJObs.size()));
+        finished.setText(" "+finishedJObs.size());
+        ajobs.setText(" "+(acceptedJObs.size()+finishedJObs.size()));
 
         type.setText("("+user.getType()+")");
         name.setText(user.getName());

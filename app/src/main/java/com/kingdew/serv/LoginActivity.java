@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             if (!email.isEmpty() && !pass.isEmpty()){
 
                 ArrayList<String> res=dbHelper.login(email,pass) ;
-                Toast.makeText(this, ""+res, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, ""+res, Toast.LENGTH_SHORT).show();
                 if (!res.isEmpty()){
 
                     if (!res.get(0).equals("emp") && res.get(0).equals("Cleaner") ){
