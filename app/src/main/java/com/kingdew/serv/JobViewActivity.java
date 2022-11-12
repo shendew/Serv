@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,13 +14,13 @@ import com.kingdew.serv.Frags.User;
 import io.paperdb.Paper;
 
 public class JobViewActivity extends AppCompatActivity {
-    TextView data;
+    //TextView data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_view);
-        data=findViewById(R.id.data);
+        //data=findViewById(R.id.data);
         Paper.init(this);
 
 
@@ -31,6 +32,7 @@ public class JobViewActivity extends AppCompatActivity {
 
         DBHelper helper=new DBHelper(this);
         Job job= helper.getaJob(Integer.parseInt(jobID));
+        User user=helper.getUsers(job.getJobOwner());
 
         TextView jbname= findViewById(R.id.jbname);
         TextView jbcname= findViewById(R.id.jbcname);
@@ -47,15 +49,19 @@ public class JobViewActivity extends AppCompatActivity {
             }
         });
 
+        if (!Paper.book().read("type").equals("Cleaner")){
+            aceptJ.setVisibility(View.GONE);
+        }
         jbname.setText(job.getJobName());
         jbctele.setText(job.getJobTele());
         jbdesc.setText(job.getJobDesc());
+        jbcname.setText(user.getName());
 
 
 
 
         //DBHelper dbHelper=new DBHelper(this);
-        data.setText("");
+        //data.setText("");
 
 
     }

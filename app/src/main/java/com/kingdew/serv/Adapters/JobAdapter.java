@@ -39,7 +39,9 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Paper.init(context);
         holder.ttitle.setText(jobs.get(position).getJobName());
-        holder.tprice.setText(jobs.get(position).getJobPrice());
+        holder.tprice.setText("LKR : "+jobs.get(position).getJobPrice());
+
+
 
         holder.itemView.setOnClickListener(view -> {
             //Toast.makeText(context, ""+jobs.get(position).getJobID(), Toast.LENGTH_SHORT).show();

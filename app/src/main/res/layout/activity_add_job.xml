@@ -38,18 +38,45 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"/>
 
-            <EditText
-                android:id="@+id/job_title"
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/acTV"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="none"/>-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reg_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
                 android:background="@drawable/login_input"
-                android:padding="10dp"
-                android:backgroundTint="#7B7B7B"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:hint="Job title" />
+                android:hint="Job type"
+                app:boxStrokeWidth="0dp"
+                android:paddingVertical="2dp"
+
+
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/acTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/job_title"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:background="@drawable/login_input"-->
+<!--                android:padding="10dp"-->
+<!--                android:backgroundTint="#7B7B7B"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textColorHint="@color/black"-->
+<!--                android:hint="Job title" />-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
