@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="Cleaner Profile"
         android:textSize="25dp"
         android:fontFamily="@font/im_fell_french_canon"
         android:textColor="@color/black"/>
@@ -68,7 +68,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Jobs"
+                android:text="All jobs Jobs"
                 android:layout_gravity="center_horizontal|bottom"
                 />
         </androidx.cardview.widget.CardView>
@@ -93,7 +93,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available Jobs"
+                android:text="Accepted Jobs"
                 android:layout_gravity="center_horizontal|bottom"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
